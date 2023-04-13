@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+ <title>{% block title %}{{ pro_title }}{% endblock %}</title>
+
+ {% block start %}
+<style>
+.header{
+    background-color:white;
+}
+.logo{
+    color:red;
+}
+.menu-button,
+.menu-button:before,
+.menu-button:after
+{
+    background-color: green;
+}
+</style>
+
+<h1 class='text-3xl text-center font-bold text-[green]'>Our Projects</h1>
+<br>
+        <div class="max-w[1240px] md:px-20 px-2 mx-auto py-6 grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 gap-5 text-[#71716F]">
+        <a href='/Calculator'>
+        <div class="bg-gray-100 p-6 feature" >
+            <img src='https://media.istockphoto.com/id/950982330/vector/school-objects-design.jpg?b=1&s=170667a&w=0&k=20&c=N05onH_k-dCsAv8ECn75ib8Nhj-JTY24axnjxwiG8AQ='>
+            <h3 class="font-bold text-[20px] py-3">Calculator Programme</h3>
+
+        </div></a>
+        <a href='/projects/age-calculotor'>
+        <div class="bg-gray-100 p-6 feature">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7--X5KZ5_j5ID92FdUmEp8RHALm4CgbYkEg&usqp=CAU'>
+            <h3 class="font-bold text-[20px] py-3">Age Calculator</h3>
+
+        </div></a>
+        <div class="bg-gray-100 p-6 feature">
+
+            <h3 class="font-bold text-[20px] py-3"><i class="fa fa-user text-2xl"></i>
+                Great Support</h3>
+            <p class="leading-relaxed">Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div class="bg-gray-100 p-6 feature">
+            <h3 class="font-bold text-[20px] py-3"><i class="fa fa-user text-2xl"></i>
+                Technical Skills</h3>
+            <p class="leading-relaxed">Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div class="bg-gray-100 p-6 feature">
+            <h3 class="font-bold text-[20px] py-3"><i class="fa fa-user text-2xl"></i>
+                Highly Recomended</h3>
+            <p class="leading-relaxed">Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+        <div class="bg-gray-100 p-6 feature">
+            <h3 class="font-bold text-[20px] py-3"><i class="fa fa-user text-2xl"></i>
+                Positive Reviews</h3>
+            <p class="leading-relaxed">Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+        </div>
+    </div>
+
+
+{% endblock start %}

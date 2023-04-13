@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Er Nadeem Ali">
+    <meta name="description"
+        content="Web Development, Software Development , Er Nadeem Ali, Developers , best developers , We are the best developer for you , we are here for you available on 24/7 hours.">
+    <meta name="keywords"
+        content="best software company in amroha , Best software company in Amroha , Web Development in Amroha , Software Development , amrohvi developers , Graphics Design , Web hosting">
+    <title>Welcome To Er Nadeem Ali Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src='static/js/file1.js'></script>
+
+</head>
+
+<body>
+
+    <p style='color:red; font-size:20px;'>{{mes}}</p>
+    <header class="bg-[#fc8bf7] header">
+        <div class="max-w[1240px] md:px-20 items-center mx-auto">
+            <div class="flex justify-between pt-4 p-3">
+                <div class="logo text-3xl text-white font-bold"> <a href='/'>DevSolution</a> </div>
+                <input id='menu-toggle' type="checkbox">
+                <label class="menu-button-container" for="menu-toggle">
+                    <div class="menu-button"></div>
+                </label>
+                <ul class="menu font-bold">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="/projects">Our Projects</a></li>
+                </ul>
+            </div>
+    </header>
+    {% block start %}
+
+
+
+    {% endblock start %}
+
+
+    <div class="bg-[#222222] mt-6 ">
+        <div class="max-w[1240px] md:px-20 mx-auto py-12 md:grid grid-cols-3 text-[#71716F]">
+            <div>
+                <h2 class=" font-bold text-xl text-white p-6">About us</h2>
+                <p class="pl-6">DevSolution is a my personal website I developed it for my resume purpose. If you need
+                    to any website
+                    or
+                    software of any types you should contact us.</p>
+
+            </div>
+            <div>
+                <h2 class=" font-bold text-xl text-white p-6">Feedback</h2>
+                <p class="pl-6">Stay update with our latest</p>
+                <form method='get'>
+                    {% csrf_token %}
+                    <input class="ml-6" type="email" placeholder='Enter Your Email' name='f_email'>
+                    <button style='background:red; color:white; padding:5px 10px; border-radius:20px;'
+                        name='f_btn'>Submit</button>
+                </form>
+            </div>
+            <div>
+                <h2 class=" font-bold text-xl text-white p-6">Follow us</h2>
+                <p class="p-4 text-xl">
+                    <a class="text-white"
+                        href="https://www.facebook.com/people/Nadeem-Ali-Qadri-Naushahi/100024727848959/"><i
+                            class="fa-brands fa-facebook"></i></i></a>
+                    <a class="text-white " href=""> <i class="fa-brands fa-twitter p-3 "></i></a>
+                    <a class="text-white " href="">
+                        <i class="fa-brands fa-instagram p-3"></i>
+                    </a>
+                    <a class="text-white " href="https://github.com/ErNadeemAli"><i
+                            class="fa-brands fa-github"></i></i></a>
+
+                </p>
+            </div>
+        </div>
+        <p class="text-center text-white font-bold">Copyright ©2022 All rights by Er Nadeem Ali</p>
+
+    </div>
+
+</body>
+
+</html>

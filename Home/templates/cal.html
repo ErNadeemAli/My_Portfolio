@@ -1,0 +1,165 @@
+<a href='/projects'>Home</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator ..........</title>
+</head>
+<style>
+a{
+    padding:10px;
+    background-color:red;
+    font-size:20px;
+    text-align:center;
+
+    margin-top:10px;
+}
+    body {
+        background: url(https://media.istockphoto.com/id/950982330/vector/school-objects-design.jpg?b=1&s=170667a&w=0&k=20&c=N05onH_k-dCsAv8ECn75ib8Nhj-JTY24axnjxwiG8AQ=);
+    }
+
+    table {
+
+        margin: auto;
+
+        margin-top: 60px;
+        background: #ccc;
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 5px;
+
+
+    }
+
+    table tr,
+    td {
+        padding: 2px;
+        text-align: center;
+    }
+
+    table button {
+        width: 80px;
+        height: 80px;
+        font-size: 45px;
+        text-align: center;
+        /* border-radius: 50px;
+        border: none; */
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    table input {
+        width: 95%;
+        height: 60px;
+        padding: 10px;
+        font-size: 40px;
+        text-align: right;
+    }
+</style>
+
+<body>
+    <table border="0">
+        <tr>
+
+            <td colspan='5'><input type="text" id="textinput"></td>
+
+        </tr>
+        <tr>
+            <td><button onclick="storeData('+')">+</button></td>
+            <td><button onclick="storeData('1')">1</button></td>
+            <td><button onclick="storeData('2')">2</button></td>
+            <td><button onclick="storeData('3')">3</button></td>
+            <td><button onclick="clrData()">C</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="storeData('-')">-</button></td>
+            <td><button onclick="storeData('4')">4</button></td>
+            <td><button onclick="storeData('5')">5</button></td>
+            <td><button onclick="storeData('6')">6</button></td>
+            <td><button onclick="root()">√</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="storeData('*')">x</button></td>
+            <td><button onclick="storeData('7')">7</button></td>
+            <td><button onclick="storeData('8')">8</button></td>
+            <td><button onclick="storeData('9')">9</button></td>
+            <td><button onclick="percet()">%</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="storeData('/')">/</button></td>
+            <td><button onclick="storeData('.')">.</button></td>
+            <td><button onclick="storeData('0')">0</button></td>
+            <td><button onclick="storeData('00')">00</button></td>
+            <td><button onclick="calData()">=</button></td>
+
+
+        </tr>
+    </table>
+</body>
+<script>
+    function storeData(v) {
+        var textinput = document.getElementById('textinput')
+        var oldvalue = textinput.value;
+        var t = oldvalue.length;
+        var lastchar = oldvalue[t - 1];
+        // console.log(lastchar)
+
+        var oprSym = ['+', '-', '*', '/', '.', '%']; // +, -, * , / , .
+        if (oprSym.includes(v)) { // true
+            if (oprSym.includes(lastchar)) {
+                var removeLast = oldvalue.slice(0, -1);
+                textinput.value = removeLast + v;
+
+            }
+            else {
+                textinput.value = oldvalue + v;
+            }
+
+        } else {
+            textinput.value = oldvalue + v;
+        }
+
+    }
+    function calData() {
+
+        var textinput = document.getElementById('textinput')
+
+        var oldvalue = eval(textinput.value);
+
+        textinput.value = oldvalue;
+    }
+    function clrData() {
+        var textinput = document.getElementById('textinput').value = ''
+
+    }
+    function root() {
+        var textinput = document.getElementById('textinput')
+        var oldvalue = Math.sqrt(textinput.value)
+        textinput.value = oldvalue;
+    }
+    function percet() {
+
+        var oldvalue = eval(textinput.value);
+
+        textinput.value = oldvalue;
+    }
+    // function popedData(elem) {
+    //     var textinput = document.getElementById('textinput')
+    //     var oldvalue = textinput.value;
+    //     x=oldvalue.split('')
+    //     x.pop()
+    //    document.getElementById('textinput').innerText=x
+
+
+    // }
+
+
+
+</script>
+
+</html>
